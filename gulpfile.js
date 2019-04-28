@@ -6,6 +6,7 @@ const GulpSass = require("./build/gulp/sass").GulpSass;
 const GulpJSBundle = require("./build/gulp/jsbundle").GulpJSBundle;
 const GulpLiveReloaded = require("./build/gulp/livereloaded").GulpLiveReloaded;
 const GulpFileMerge = require("./build/gulp/filemerge").GulpFileMerge;
+const GulpNodeMonitor = require("./build/gulp/nodemon").GulpNodeMonitor;
 
 //const connect = require('gulp-connect');
 //const watch = require('gulp-watch');
@@ -60,7 +61,7 @@ gulp.task('merge-sql-scripts', () => {
         dest: path.join(__dirname, 'dist/server/db/scripts/'),
         target: 'update-' + sDate + '.sql'
     };
-    return task.task();
+    task.task();
 });
 
 gulp.task('livereload', () => {
@@ -76,6 +77,17 @@ gulp.task('watch', function() {
     gulp.watch(src.js, ['bundle-js']);
     //gulp.watch(src.html, ['html']);
     //gulp.watch(src.riotTags, ['riot-tags']);
+});
+
+gulp.task('monitor', function (done) {
+    let task = new GulpNodeMonitor();
+    task.opts = {
+        script: 'server.js',
+        ext: 'js html',
+        env: { 'NODE_ENV': 'development' },
+        done: done
+    };
+    task.task(done);
 });
 
 //gulp.task('default', ['sass', 'server', 'watch', 'livereload', 'js', 'riot-tags']);
