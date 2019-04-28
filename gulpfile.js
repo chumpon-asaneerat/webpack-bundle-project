@@ -14,7 +14,10 @@ gulp.task('build-doc', (cb) => {
     let task = new GulpJSDoc();
     task.opts = {
         config: require('./jsdoc.json'),
-        src: path.join(__dirname, 'src/client/js/**/*.js'),
+        src: [
+            path.join(__dirname, 'src/client/js/**/*.js'), 
+            path.join(__dirname, 'src/server/js/**/*.js')
+        ],
         dest: path.join(__dirname, 'dist/client/js/doc/')
     };
     return task.task(cb);
