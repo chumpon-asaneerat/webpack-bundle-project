@@ -39,6 +39,7 @@ gulp.task('js-bundle', () => {
 class GulpFileMerge extends GulpTask {
     task() {
         return gulp.src(this.opts.src)
+            //.pipe(sort())
             .pipe((!this.opts.order) ? sort() : order(this.opts.order))
             .pipe(debug())
             .pipe(insert.prepend(this.opts.header))
