@@ -1,2 +1,2 @@
-# github-node-buildtools-template
-The github node with buildtools template
+# github-node-buildtools-webpack-template
+The github node with buildtools with webpack template
