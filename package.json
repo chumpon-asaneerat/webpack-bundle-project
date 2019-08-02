@@ -1,7 +1,7 @@
 {
-  "name": "github-node-buildtools-template",
+  "name": "github-node-buildtools-webpack-template",
   "version": "1.0.0",
-  "description": "The github node with buildtools template",
+  "description": "The github node with buildtools with webpack template",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chumpon-asaneerat/github-node-buildtools-template.git"
+    "url": "git+https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template.git"
   },
   "author": "Chumpon Asaneerat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chumpon-asaneerat/github-node-buildtools-template/issues"
+    "url": "https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template/issues"
   },
-  "homepage": "https://github.com/chumpon-asaneerat/github-node-buildtools-template#readme",
+  "homepage": "https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
