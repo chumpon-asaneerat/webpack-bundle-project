@@ -1,7 +1,7 @@
 {
-  "name": "github-node-buildtools-webpack-template",
+  "name": "bootstrap4-fontawesome5-webpack-bundle-project",
   "version": "1.0.0",
-  "description": "The github node with buildtools with webpack template",
+  "description": "The Bootstrap 4.x and FontAwesome 5.x webpack bundle project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template.git"
+    "url": "git+https://github.com/chumpon-asaneerat/bootstrap4-fontawesome5-webpack-bundle-project.git"
   },
   "author": "Chumpon Asaneerat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template/issues"
+    "url": "https://github.com/chumpon-asaneerat/bootstrap4-fontawesome5-webpack-bundle-project/issues"
   },
-  "homepage": "https://github.com/chumpon-asaneerat/github-node-buildtools-webpack-template#readme",
+  "homepage": "https://github.com/chumpon-asaneerat/bootstrap4-fontawesome5-webpack-bundle-project#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
