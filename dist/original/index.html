@@ -22,7 +22,7 @@
     <link href="public/emoji-symbols/emojisymbol.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
+    <h1 id="title1"></h1>
     <!-- JQuery -->
     <script src="public/jquery/jquery.min.js"></script>
     <!-- JQuery UI -->
@@ -33,5 +33,9 @@
     <script src="public/bootstrap/js/bootstrap.min.js">/* bootstrap required jQuery and popperjs. */</script>
     <!-- Moment.js -->
     <script src="public/moment/moment.min.js"></script>
+    <script>
+        let title1 = $('#title1');
+        title1.text('Hello World.');
+    </script>
 </body>
 </html>
