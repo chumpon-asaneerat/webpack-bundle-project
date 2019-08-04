@@ -86,9 +86,15 @@
     <!-- Moment.js -->
     <script src="public/moment/moment.min.js"></script>
     <script>
+        // jQuery test.
         let title1 = $('#title1');
         title1.text('Hello World.');
 
+        // moment
+        let now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+        console.log(now);
+
+        // Bootstrap 4 - tootips.
         let options = {};
         $('#button1').tooltip(options);
         $('#button2').tooltip(options);
