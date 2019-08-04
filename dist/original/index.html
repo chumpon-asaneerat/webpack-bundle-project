@@ -20,6 +20,12 @@
     <!-- Flag and Emoji icons -->
     <link href="public/flag-icons/css/flag-icon.min.css" rel="stylesheet" type="text/css" />
     <link href="public/emoji-symbols/emojisymbol.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- Style for JQuery UI dragable -->
+    <style>
+        #draggable { width: 150px; height: 150px; padding: 0.5em; }
+    </style>
 </head>
 <body>
     <h1 id="title1"></h1>
@@ -50,6 +56,13 @@
         <p><span class="flag-icon flag-icon-us"></span> EN (United States)</p>
         <p><span class="flag-icon flag-icon-th"></span> TH (Thailand)</p>
         <br>
+    </div>
+
+    <!-- JQuery UI dragable -->
+    <div>
+        <div id="draggable" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
     </div>
     
     <div class="container-fulid m-2">
@@ -113,6 +126,9 @@
         $('#button2').tooltip(options);
         $('#button3').tooltip(options);
         $('#button4').tooltip(options);
+
+        // jQuery UI dragable test.
+        $( "#draggable" ).draggable();
     </script>
 </body>
 </html>
