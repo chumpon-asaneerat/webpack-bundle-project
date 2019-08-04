@@ -1,16 +1,13 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const fontawesome = {
     mode: 'development',
-    watch: true,
-    entry: { 
-        //main: './app/js/main.js',
-        //index: './src/index.js',
-        app: './src/client/js/app.js'
+    watch: false,
+    entry: {
+        fontawesome: './src/dist/font-awesome.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/font-awesome/public'),
         filename: '[name].js'
     },
     devtool: "source-map",
@@ -19,32 +16,12 @@ module.exports = {
     },
     module: {
         rules: [{
-            // js bundle setup
             test: /\.js$/i,
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: { presets: ['@babel/preset-env'] }
             }
-        }, {
-            // scss bundle setup
-            test: /\.scss$/i,
-            exclude: /node_modules/,
-            use: [
-                {
-                    // fallback to style-loader in development
-                    loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    options: { sourceMap: true }
-                },
-                {
-                    loader: 'css-loader',
-                    options: { modules: false, sourceMap: true }
-                },
-                {
-                    loader: "sass-loader",
-                    options: { sourceMap: true }
-                }
-            ]
         }, {
             // css bundle setup
             test: /\.css$/i,
@@ -62,24 +39,20 @@ module.exports = {
                 }
             ]
         }, {
-            test: /\.(png|jpe?g|gif)$/i,
-            exclude: /node_modules/,
-            use: [
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 8192
-                }
-              }
-            ]
+          test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: 'url-loader?limit=10000&mimetype=application/font-woff',
+        }, {
+          test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+          use: 'file-loader',
+        }, {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          use: [
+            'file-loader?name=images/[name].[ext]',
+            'image-webpack-loader?bypassOnDebug'
+          ]
         }]
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
-    ]
+    plugins: []
 }
+
+module.exports = [fontawesome];
