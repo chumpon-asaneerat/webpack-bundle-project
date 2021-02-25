@@ -1,5 +1,9 @@
 ------------------------------------------------------------------------------------------------
 [commit]
+Update 2021-02-25 #2
+- Install node packages (due to pull request).
+
+[commit]
 Update 2021-02-25 #1
 - Update history.txt
 
